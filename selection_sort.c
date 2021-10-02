@@ -9,32 +9,30 @@ int main()
     {
         printf("%d ", arr[i]);
     }
+    printf("\n\n");
     for (int i = 1; i < MAX_SIZE; i++)
     {
-        if (arr[i] < arr[i - 1])
+        int min = i;
+        for (int j = i; j < MAX_SIZE; j++)
         {
-            int temp = arr[i];
-            arr[i] = arr[i - 1];
-            arr[i - 1] = temp;
-        }
-        for (int j = i - 1; j > 0; j--)
-        {
-            if (arr[j] < arr[j - 1])
+            if (arr[j] < arr[min])
             {
-                int temp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = temp;
+                min = j;
             }
         }
+        int temp = arr[min];
+        arr[min] = arr[i - 1];
+        arr[i - 1] = temp;
         printf("\n[%d] ", i);
         for (int i = 0; i < MAX_SIZE; i++)
         {
             printf("%d ", arr[i]);
         }
     }
-    printf("\n\nArray before sotring: ");
+    printf("\n\nArray after sotring: ");
     for (int i = 0; i < MAX_SIZE; i++)
     {
         printf("%d ", arr[i]);
-   }
+    }
+    return 0;
 }
