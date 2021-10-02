@@ -36,5 +36,5 @@ int main()
     for (int i = 0; i < MAX_SIZE; i++)
     {
         printf("%d ", arr[i]);
-    }
+   }
 }
